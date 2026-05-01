@@ -6,7 +6,7 @@ const Footer = () => {
   return (
   
 
-<div className='flex flex-col justify-center items-center' >
+<div className='flex flex-col justify-center items-center pt-10 pb-8' >
 
   
 <footer className=" text-base-content py-10 ">

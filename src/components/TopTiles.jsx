@@ -5,7 +5,6 @@ import TilesCard from './shared/TilesCard';
 
 const TopTiles =async() => {
 const TilesDa = await getTopTilesData()
-console.log(TilesDa)
 
   return (
     <div className='grid grid-cols-1 md:grid-cols-3 justify-between items-center container mx-auto py-10 gap-4'>
