@@ -1,12 +1,11 @@
 "use client"
 import React from 'react';
 import Navlink from './shared/Navlink';
-
 const Navbar = () => {
-  return (
-    <div>
-      
-      <div className="navbar bg-base-100 shadow-sm">
+      return (
+  <div>
+
+      <div className=" container mx-auto navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -14,8 +13,8 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex="-1"
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><Navlink href={'/'} >Home</Navlink></li>
         <li><Navlink href={'/AllTiles'}>All Tiles</Navlink></li>
         <li><Navlink href={'/Profile'} >Profile</Navlink></li>
@@ -36,7 +35,7 @@ const Navbar = () => {
   <div className="navbar-end">
     <a className="btn bg-green-800 ">Login</a>
   </div>
-</div>
+      </div>
 
     </div>
   );

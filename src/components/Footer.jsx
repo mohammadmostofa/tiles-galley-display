@@ -18,7 +18,7 @@ const Footer = () => {
       <div>
         <h2 className="text-lg font-bold mb-3">About Us</h2>
         <p className="text-sm font-medium">
-          We create modern web experiences with 
+          We create modern web experiences with <br />
           clean UI and fast performance.
         </p>
       </div>
