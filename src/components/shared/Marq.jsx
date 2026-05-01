@@ -6,8 +6,8 @@ const Marq =  async () => {
   const tiles = await getAllTilesData();
   
   return (
-    <div>
-           <Marquee className=' py-5  border shadow-amber-50 '>
+    <div className='container mx-auto '>
+           <Marquee className=' py-6  border shadow-amber-50 '>
 
             {
             tiles.map(

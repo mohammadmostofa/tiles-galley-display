@@ -12,7 +12,7 @@ import Marq from '@/components/shared/Marq';
 
              <div className='relative flex flex-col justify-center items-center text-center py-5 w-full overflow-hidden '>
        
-       <Image src={bannerImg} width={400} height={300} alt='banner_img'
+       <Image src={bannerImg} width={300} height={300} alt='banner_img'
        className='w-full'
        ></Image>
 
@@ -32,7 +32,7 @@ import Marq from '@/components/shared/Marq';
            </div>
            
        
-       
+            
            <div><TopTiles></TopTiles></div>
 
 
