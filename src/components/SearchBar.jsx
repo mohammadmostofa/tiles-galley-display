@@ -6,12 +6,12 @@ const SearchBar = ({ tiles }) => {
 
   const [search, setSearch] = useState('');
 
-  const filteredItems = tiles.filter(tile =>
-    tile.title.toLowerCase().includes(search.toLowerCase())
+  const filteredItems = tiles.filter(tiles =>
+    tiles.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className='container mx-auto' >
+    <div>
 
       <input 
   
@@ -21,11 +21,11 @@ const SearchBar = ({ tiles }) => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-5 py-10 '>
         {
           
-          filteredItems.length > 0 ?  filteredItems.map(tile => (
-            <AllCards key={tile.id} tiles={tile} />
+          filteredItems.length > 0 ?  filteredItems.map(tiles => (
+            <AllCards key={tiles.id} tiles={tiles} />
           ))
           
           : ( <p> No Data Found </p> )

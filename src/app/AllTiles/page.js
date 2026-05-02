@@ -1,37 +1,21 @@
-import React from 'react';
-import { getAllTilesData } from '../lib/data';
-import AllCards from '@/components/shared/AllCards';
-import SearchBar from '@/components/shared/SearchBar';
 
+import SearchBar from '@/components/SearchBar';
+import { getAllTilesData } from '../lib/data';
 
 const AllTilesPage = async () => {
-  const tiles = await getAllTilesData()
+  const tiles = await getAllTilesData();
 
-   
   return (
-
-      <div>
-
-        
-        {
-          <SearchBar tiles={tiles} ></SearchBar>
-        }
-                 
-
-
-    <div className='grid grid-cols-1 md:grid-cols-4 justify-between items-center gap-4 py-15 px-4'>
+    <div>
        
-       {
-        tiles.map(tiles => <AllCards key={tiles.id} tiles={tiles} ></AllCards> )
+       <div className='container mx-auto'>
+        {
+        <SearchBar tiles={tiles} ></SearchBar>
        }
+       </div>
        
        
     </div>
-
-
-</div>
-
-
   );
 };
 export default AllTilesPage;

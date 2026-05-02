@@ -1,56 +1,49 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 const AllCards = ({tiles}) => {
-
   return (
+   
+   
 
-    <div>
+      <div className="bg-gray-700 backdrop-blur-lg border border-gray-200 rounded-2xl
+       shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden p-4  group">
 
+  {/* Image */}
+  <div className="overflow-hidden">
+    <Image
+      src={tiles.image}
+      width={300}
+      height={200}
+      alt={tiles.title}
+      className="w-full h-[180px] object-cover rounded-2xl group-hover:scale-110 transition duration-500"
+    />
+  </div>
 
+  {/* Content */}
+  <div className="p-4 text-center space-y-2">
 
-                <div className="p-4">
-  <div className="bg-white/80 backdrop-blur-md border border-gray-200 
-                  rounded-2xl shadow-lg hover:shadow-2xl 
-                  transition duration-300 overflow-hidden group">
+    <h2 className="text-lg font-semibold text-white group-hover:text-indigo-600 transition">
+      {tiles.title}
+    </h2>
 
-    <figure className="p-5 flex justify-center relative">
-      
-      <div className="absolute w-40 h-40 bg-indigo-200 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition"></div>
+    <p className="text-sm text-gray-300 line-clamp-2">
+      {tiles.description}
+    </p>
 
-      <Image
-        src={tiles.image}
-        width={220}
-        height={220}
-        alt={tiles.title}
-        className="relative rounded-xl object-cover 
-                   group-hover:scale-105 transition duration-500"
-      />
-    </figure>
+    {/* Button */}
+    <Link href={`/Details/${tiles.id}`}>
+      <button className="mt-3 px-4 py-2 text-sm rounded-lg text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-90 hover:scale-105 transition-all duration-300">
+        View Details
+      </button>
+    </Link>
 
-    <div className="px-5 pb-6 text-center space-y-3">
-
-      <h2 className="text-xl font-bold text-gray-800 line-clamp-1">
-        {tiles.title}
-      </h2>
-
-      <p className="text-sm text-gray-600 line-clamp-2">
-        {tiles.description}
-      </p>
-
-      <Link href={`/Details/${tiles.id}`}>
-        <button className="mt-2 px-5 py-2 rounded-lg text-white text-sm font-medium
-                           bg-gradient-to-r from-indigo-500 to-purple-500
-                           hover:scale-105 hover:shadow-md transition duration-300">
-          View Details
-        </button>
-      </Link>
-
-    </div>
   </div>
 </div>
-    </div>
+
+  
+
 
   );
 };
