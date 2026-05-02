@@ -3,8 +3,13 @@ import Link from 'next/link';
 import React from 'react';
 
 const AllCards = ({tiles}) => {
+
   return (
+
     <div>
+
+
+
                 <div className="p-4">
   <div className="bg-white/80 backdrop-blur-md border border-gray-200 
                   rounded-2xl shadow-lg hover:shadow-2xl 
@@ -46,6 +51,7 @@ const AllCards = ({tiles}) => {
   </div>
 </div>
     </div>
+
   );
 };
 
