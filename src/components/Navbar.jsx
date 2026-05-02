@@ -1,7 +1,16 @@
 "use client"
 import React from 'react';
 import Navlink from './shared/Navlink';
+import { authClient } from '@/lib/auth-client';
+import { Avatar } from '@heroui/react';
 const Navbar = () => {
+  const userData = authClient.useSession();
+  const UserDa = userData.data?.user;
+    
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  }
+
       return (
   <div>
 
@@ -33,9 +42,35 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end flex space-x-5">
-    <a href='/Register' className="text-md">Register Now</a>
-    <a href='/Login' className="btn btn-accent text-white bg-black border-none ">Login</a>
+
+  {
+    !UserDa ? 
+               
+
+    <ul className='flex space-x-4 justify-end items-center '>
+      <li><Navlink className={'text-sm font-normal border border-accent p-2 '} href={'/Register'}>Register Now</Navlink></li>
+              <li><Navlink className={'btn bg-black '} href={'/Login'} >Login</Navlink></li>
+    </ul>
+  
+    :  
+    
+        <div className='flex justify-end items-center space-x-4'>
+             
+                   <Avatar>
+        <Avatar.Image alt={UserDa?.name} src={UserDa?.image} referrerPolicy='no-referrer' />
+        <Avatar.Fallback> {UserDa?.name[0]} </Avatar.Fallback>
+      </Avatar>
+          
+          <button onClick={handleSignOut} className='btn bg-red-600 hover:bg-red-800 '>LogOut</button>
+
+       </div>
+
+
+
+  }
+
   </div>
+
       </div>
 
     </div>
