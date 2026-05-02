@@ -67,12 +67,11 @@ export default function Register () {
   name="image"
   type="text"
   validate={(value) => {
-    if (!value) return "Image URL is required";
+    if (!value){
+      return "Image URL is required"
+    }
 
-    const urlPattern =
-      /^(https?:\/\/.*\.(?:png|jpg|jpeg|webp|gif|svg))$/i;
-
-    if (!urlPattern.test(value)) {
+      {
       return "Please enter a valid image URL (jpg, png, webp, gif, svg)";
     }
 

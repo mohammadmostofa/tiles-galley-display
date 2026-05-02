@@ -3,7 +3,7 @@ import React from 'react';
 import Navlink from './shared/Navlink';
 import { authClient } from '@/lib/auth-client';
 import { Avatar } from '@heroui/react';
-const Navbar = () => {
+const Navbar =  () => {
   const userData =  authClient.useSession();
   const UserDa = userData.data?.user;
     
