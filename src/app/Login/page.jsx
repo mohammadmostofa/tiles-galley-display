@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import { GrGoogle } from "react-icons/gr";
 
 export default function Login () {
  const onSubmit = async (e) => {
@@ -29,16 +30,25 @@ export default function Login () {
   };
 
 
+  // Google signIn function 
+
+  const handleGoogleSignIn = async () => {
+     await authClient.signIn.social({
+      provider: 'google',
+     })
+  }
+
+
   return (
+       
+    <div className="flex flex-col justify-center min-h-[100vh] items-center container mx-auto py-10 ">
     
-    <div className="flex flex-col justify-center  items-center container mx-auto py-20">
+    <div className="  rounded-2xl shadow-xl bg-gray-800 p-5 ">
+       
+    <h2 className="text-center font-bold text-3xl pb-6">Login Your Account </h2>
 
-    <Form className="flex justify-center flex-col gap-4  py-10 px-20 rounded-2xl shadow-xl bg-gray-800" onSubmit={onSubmit}>
+    <Form className="flex justify-center flex-col gap-4" onSubmit={onSubmit}>
              
-             <h2 className="text-center font-bold text-3xl pb-6">Login Your Account </h2>
-
-
-
       {/* email */}
       <TextField
         isRequired
@@ -94,11 +104,16 @@ export default function Login () {
           Reset
         </Button>
       </div>
-      <p className="text-center pt-4">
-        Don't have an account? <a className="underline"  href="">Register </a>
-      </p>
     </Form>
 
+    <div>
+                        <p className="text-center py-4 "> or </p>
+            <button onClick={handleGoogleSignIn} className=" mt-2 btn w-full bg-gray-600  text-white"> <GrGoogle className="text-yellow-300"/> Login with Google </button>
+
+    </div>
+              
+
+    </div>
 
     </div>
 
