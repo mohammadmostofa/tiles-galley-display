@@ -4,7 +4,7 @@ import Navlink from './shared/Navlink';
 import { authClient } from '@/lib/auth-client';
 import { Avatar } from '@heroui/react';
 const Navbar = () => {
-  const userData = authClient.useSession();
+  const userData =  authClient.useSession();
   const UserDa = userData.data?.user;
     
   const handleSignOut = async () => {
@@ -49,7 +49,7 @@ const Navbar = () => {
 
     <ul className='flex space-x-4 justify-end items-center '>
       <li><Navlink className={'text-sm font-normal border border-accent p-2 '} href={'/Register'}>Register Now</Navlink></li>
-              <li><Navlink className={'btn bg-black '} href={'/Login'} >Login</Navlink></li>
+              <li><Navlink className={'btn bg-blackJ '} href={'/Login'} >Login</Navlink></li>
     </ul>
   
     :  
