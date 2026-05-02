@@ -1,18 +1,34 @@
 "use client";
-
+import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 export default function Register () {
- const onSubmit = (e) => {
+  // userouter mulotho Register teke onno page ye nowyr jonno aikane bebohar hoyece
+   const router = useRouter()
+ const onSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {};
-    // Convert FormData to plain object
-    formData.forEach((value, key) => {
-      data[key] = value.toString();
-    });
-    alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+     
+  const formData = new FormData(e.currentTarget);
+  const data = Object.fromEntries(formData.entries());
+
+  const res = await authClient.signUp.email({
+    name: data.name,
+    email: data.email,
+    password: data.password,
+    image: data.image,
+  });
+
+  if (res.error) {
+     alert(res.error.message);
+    return;
+  } 
+    else  {
+
+       alert("Account created successfully!");
+       router.push('/')
+  }
 
   };
 
@@ -21,7 +37,7 @@ export default function Register () {
     
     <div className="flex flex-col justify-center  items-center container mx-auto py-20">
 
-    <Form className="flex justify-center flex-col gap-4  py-5 px-20 rounded-2xl shadow-xl border " onSubmit={onSubmit}>
+    <Form className="flex justify-center flex-col gap-4  py-5 px-20 rounded-2xl shadow-xl bg-gray-800" onSubmit={onSubmit}>
              
              <h2 className="text-center font-bold text-3xl pb-6">Register Your Account </h2>
 
@@ -117,14 +133,14 @@ export default function Register () {
       <div className="flex gap-2">
         <Button type="submit">
           <Check />
-            Register
+            Submit
         </Button>
         <Button type="reset" variant="secondary">
           Reset
         </Button>
       </div>
       <p className="text-center pt-4">
-        Already have an account? <a className="underline"  href="">Login</a>
+        Already have an account? <a className="underline"  href="/Login">Login</a>
       </p>
     </Form>
 

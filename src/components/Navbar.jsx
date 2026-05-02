@@ -32,9 +32,9 @@ const Navbar = () => {
 
     </ul>
   </div>
-  <div className="navbar-end flex">
-    <a href='/Register' className="btn btn-neutral ">Register Now</a>
-    <a href='/Login' className="btn btn-accent ">Login</a>
+  <div className="navbar-end flex space-x-5">
+    <a href='/Register' className="text-md">Register Now</a>
+    <a href='/Login' className="btn btn-accent text-white ">Login</a>
   </div>
       </div>
 
