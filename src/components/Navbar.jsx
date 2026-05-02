@@ -32,8 +32,9 @@ const Navbar = () => {
 
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn bg-green-800 ">Login</a>
+  <div className="navbar-end flex">
+    <a href='/Register' className="btn btn-neutral ">Register Now</a>
+    <a href='/Login' className="btn btn-accent ">Login</a>
   </div>
       </div>
 

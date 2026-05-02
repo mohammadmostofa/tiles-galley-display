@@ -11,12 +11,13 @@ const SearchBar = ({ tiles }) => {
   );
 
   return (
-    <div>
+    <div className='container mx-auto' >
 
-      <input
+      <input 
+  
         type="text"
         placeholder="Search..."
-        className="input input-bordered mb-4"
+        className="input input-bordered mb-4 ml-5 "
         onChange={(e) => setSearch(e.target.value)}
       />
 
