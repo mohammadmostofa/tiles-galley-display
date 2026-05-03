@@ -8,7 +8,7 @@ const ProfilePage = () => {
    const userData = authClient.useSession()
     const UserDa = userData.data?.user;
   return (
-    <div className='min-h-[80vh] pt-20'>
+    <div className='min-h-[80vh] py-10 flex flex-col justify-center items-center'>
            
            <Card className='max-w-96 mx-auto flex justify-center items-center py-15 container bg-slate-700 ' >
 
