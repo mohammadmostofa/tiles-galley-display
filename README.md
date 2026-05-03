@@ -57,18 +57,6 @@ A modern web application for displaying and exploring a collection of tiles with
 ```
 
 ---
-
-## ⚙️ Installation & Setup
-
-```bash
-git clone https://github.com/your-username/tiles-gallery.git
-cd tiles-gallery
-npm install
-npm run dev
-```
-
-Open: http://localhost:3000
-
 ---
 
 ## 🌐 Deployment

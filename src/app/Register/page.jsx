@@ -67,19 +67,15 @@ export default function Register () {
   name="image"
   type="text"
   validate={(value) => {
-    if (!value){
-      return "Image URL is required"
+    if (!value) {
+      return "Image URL is required";
     }
 
-      {
-      return "Please enter a valid image URL (jpg, png, webp, gif, svg)";
-    }
-
-    return null;
+    return null; // যেকোনো URL allow করবে
   }}
 >
   <Label className="text-white">Image URL</Label>
-  <Input placeholder="https://example.com/image.jpg" />
+  <Input placeholder="your image URL" />
   <FieldError />
 </TextField>
 
