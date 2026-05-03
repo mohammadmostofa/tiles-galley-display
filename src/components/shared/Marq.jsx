@@ -6,8 +6,8 @@ const Marq =  async () => {
   const tiles = await getAllTilesData();
   
   return (
-    <div className='container mx-auto  mt-10'>
-           <Marquee className=' py-6  border shadow-amber-50 '>
+    <div>
+           <Marquee direction='left' className=' py-6  border shadow-amber-50 overflow-hidden'>
 
             {
             tiles.map(

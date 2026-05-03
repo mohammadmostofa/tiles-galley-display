@@ -48,7 +48,7 @@ import Link from 'next/link';
 
 
 
-           <div>
+           <div className='container mx-0 py-4'>
 
                 <Marq></Marq>
            </div>

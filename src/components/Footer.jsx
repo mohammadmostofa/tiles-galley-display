@@ -25,11 +25,11 @@ const Footer = () => {
 
       <div>
         <h2 className="text-lg font-bold mb-3">Quick Links</h2>
-        <nav className="flex flex-col gap-2 text-sm">
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">About</a>
-          <a className="link link-hover">Services</a>
-          <a className="link link-hover">Projects</a>
+        <nav className="flex flex-col justify-center items-center md:justify-start md:items-start gap-2 text-sm">
+          <a href='' className="link link-hover">Home</a>
+          <a href='' className="link link-hover">All Gallery</a>
+          <a href='' className="link link-hover">Services</a>
+          <a href='' className="link link-hover">Projects</a>
         </nav>
       </div>
 
