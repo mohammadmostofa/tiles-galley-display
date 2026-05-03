@@ -48,7 +48,7 @@ const Navbar =  () => {
                
 
     <ul className='flex space-x-4 justify-end items-center '>
-      <li><Navlink className={'text-sm font-normal border border-accent p-2 '} href={'/Register'}>Register Now</Navlink></li>
+      <li><Navlink className={'text-sm font-normal border border-accent p-2 '} href={'/Register'}>Register</Navlink></li>
               <li><Navlink className={'btn bg-blackJ '} href={'/Login'} >Login</Navlink></li>
     </ul>
   
